@@ -1,0 +1,9 @@
+[submodule "scripts/scripts/CLL_TFnetworks_2018"]
+	path = scripts/scripts/CLL_TFnetworks_2018
+	url = https://github.com/gauravj49/CLL_TFnetworks_2018
+[submodule "scripts/CLL_TFnetworks_2018"]
+	path = scripts/CLL_TFnetworks_2018
+	url = https://github.com/gauravj49/CLL_TFnetworks_2018
+[submodule "scripts/pipeline"]
+	path = scripts/pipeline
+	url = https://github.com/gauravj49/pipeline

@@ -1,12 +1,28 @@
 # PWD
-cd /home/rad/users/gaurav/projects/trn
+cd /home/rad/users/gaurav/projects/ctrc
 
-# Turn on virtualenv for python 2
-source ${HOME}/packages/python2/bin/activate
+################## Pipeline ##########################
+# bamliquidator installation
+# https://github.com/BradnerLab/pipeline/wiki/bamliquidator
 
-# To deactivate 
-deactivate
+# 1) Add the Bradner Lab pipeline PPA from a terminal:
+sudo add-apt-repository ppa:bradner-computation/pipeline
+sudo apt-get update
+# 2) If you get an error "add-apt-repository: command not found", then first do sudo apt-get install software-properties-common python-software-properties
+# Install using the ppa:
+sudo apt-get install bamliquidator
+# 3) OPTIONAL: If you would like to utilize the graphing capabilities, install Bokeh, e.g.
+sudo python2.7 -m pip install bokeh==0.9.3 "openpyxl>=1.6.1,<2.0.0"
 
+# # Make the CTRC pipeline setup
+# 1) Add both pipeline and CLL_TFnetworks_2018 repositories as submodule for to ctrc
+# NOTE: They have hardcoded path inside the scripts. Please read and set them accordingly
+cd /home/rad/users/gaurav/projects/ctrc
+git submodule add https://github.com/gauravj49/CLL_TFnetworks_2018 scripts/CLL_TFnetworks_2018
+git submodule add https://github.com/gauravj49/pipeline scripts/pipeline
+
+
+################## DATA ##############################
 # Download relevant raw data
 # Jurkat H3k27Ac T-ALL cell line Organism:Homo sapiens, Platform:ILLUMINA, ReleaseDate:2015-07-22, Run:SRR1057274, SRASample:SRS518646, SRAStudy:SRP029600
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR1057274/SRR1057274.fastq.gz
