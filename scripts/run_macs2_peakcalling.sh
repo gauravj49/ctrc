@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# USAGE: bash 01_map_pairedendFastQ_bowtie2.sh input/fastq/hgStomachF35 output/hgStomachF35 mm10
+# USAGE: bash scripts/run_macs2_peakcalling.sh "output/chip/mcl/mapping" "output/chip/mcl/peaks" "mcl"
 
 # Set user defined environment variables
 jobdir="/home/rad/users/gaurav/projects/ctrc"
