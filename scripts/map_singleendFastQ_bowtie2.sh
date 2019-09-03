@@ -15,15 +15,14 @@ mappingLogsDir="${bamdir}/mappingLogs"
 # Create required dirs
 mkdir -p ${scriptsdir} ${bamdir} ${mappingLogsDir}
 
-for f in ${fastqdir}/*_1.fastq.gz
+for f in ${fastqdir}/*.fastq.gz
 do 
  # Get basefile name
  fastQfile=$(basename "$f" .fastq.gz)
  fq1=${f}
- fq2=$(dirname ${fq1})/$(basename ${fq1} _1.fastq.gz)_2.fastq.gz
  scriptFile="${scriptsdir}/${fastQfile}.sh"
  bamfile=${bamdir}/${fastQfile}.bam
- mappingLogFile=${mappingLogsDir}/${fastQfile}_bowtiw2_mapping.log
+ mappingLogFile=${mappingLogsDir}/${fastQfile}_bowtie2_mapping.log
 
  # Get the jobname to submit for each job
  jobname="01_$fastQfile"
@@ -45,7 +44,7 @@ do
 	 #-x The basename of the index for the reference genome. The basename is the name of any of the index files up to but not including the final .1.bt2 / .rev.1.bt2 / etc. bowtie2 looks for the specified index first in the current directory, then in the directory specified in the BOWTIE2_INDEXES environment variable.
 	 #-S File to write SAM alignments to. By default, alignments are written to the "standard out" or "stdout" filehandle (i.e. the console).
 
- echo "bowtie2 -x ${bt2index} -p 8 --very-sensitive -1 ${fq1} -2 ${fq2} > ${bamdir}/${fastQfile}.sam  2>&1 | tee ${mappingLogFile}" > "${scriptFile}"
+ echo "bowtie2 -x ${bt2index} -p 8 --very-sensitive -U ${fq1} -S ${bamdir}/${fastQfile}.sam  2>&1 | tee ${mappingLogFile}" > "${scriptFile}"
 
  # Convert the SAM to BAM
  echo "samtools view -b -S ${bamdir}/${fastQfile}.sam > ${bamdir}/${fastQfile}.unsorted.bam" >> "${scriptFile}"
@@ -64,5 +63,4 @@ do
  echo "${scriptFile}"
 
 done
-
 
