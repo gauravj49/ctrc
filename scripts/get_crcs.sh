@@ -49,7 +49,7 @@ do
  # Check if FIMO is installed from the meme suite
  # Needs sudo python2.7 -m pip install networkx==1.9.1
  echo "cd ${jobdir}/scripts/CLL_TFnetworks_2018" >> "${scriptFile}"
- echo "python2.7 CRC2.py -e ${encTableFile} -b ${bamFile} -g ${species} -o ${crcdir} -n ${projName} 2>&1 | tee -a ${crcLogFile}" >> "${scriptFile}"
+ echo "python2.7 CRC2.py -e ${encTableFile} -b ${bamFile} -g ${species} -o ${crcdir} -n ${bname} 2>&1 | tee -a ${crcLogFile}" >> "${scriptFile}"
  echo "" >> "${scriptFile}"
 
  # Get back to original working dir

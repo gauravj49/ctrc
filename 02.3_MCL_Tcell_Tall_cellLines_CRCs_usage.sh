@@ -78,6 +78,21 @@ create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
 bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
 cmd="parallel ::: "; for s in ${scriptsdir}/H3K27ac_DND41*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
 
+# 2.2) For Tcell and T-ALL cells celline data for mouse
+species="mm10"
+projName="tcellTallcellLine_mm"
+outdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tcellTallcellLine_mm"
+bamdir="output/chip/tcellTallcellLine_mm/mapping"
+peaksdir="output/chip/tcellTallcellLine_mm/peaks"
+scriptsdir="scripts/03_crcs/${projName}"
+
+# Create folders for each file and move them to the relevant folders
+create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
+
+# Get CRCs
+bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
+cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
+
 # 2.3) For MCL celline data
 species="hg19"
 projName="mcl"
