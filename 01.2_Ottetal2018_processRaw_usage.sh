@@ -26,7 +26,7 @@ samtools index output/ott_etal_2018/output/h3k27ac_jurkat_hs_chipseq_SRR1057274.
 macs2 callpeak \
 	-t output/ott_etal_2018/output/h3k27ac_jurkat_hs_chipseq_SRR1057274.bam \
  	-f BAM \
-	-p 1e-9 --keep-dup=auto \
+	-p 1e-5 --keep-dup=auto \
 	-n h3k27ac_jurkat \
 	--outdir output/ott_etal_2018/output/macs2 2> output/ott_etal_2018/output/macs2/h3k27ac_jurkat-macs2.log
 

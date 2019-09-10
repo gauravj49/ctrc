@@ -52,11 +52,14 @@ do
  # Sort the bam file
  echo "samtools sort -o ${bamdir}/${fastQfile}.bam ${bamdir}/${fastQfile}.unsorted.bam" >> "${scriptFile}"
 
+ # Remove duplicates from the bam file
+ echo "samtools rmdup -s  ${bamdir}/${fastQfile}.bam ${bamdir}/${fastQfile}_rmdup.bam" >> "${scriptFile}"
+
  # Remove extra files
  echo "rm -rf ${bamdir}/${fastQfile}.sam ${bamdir}/${fastQfile}.unsorted.bam"  >> "${scriptFile}"
 
  # create index of the bam files
- echo "samtools index ${bamfile} " >> "${scriptFile}"
+ echo "samtools index ${bamdir}/${fastQfile}_rmdup.bam " >> "${scriptFile}"
 
  # Write the command in the script file and give it correct permission to run
  chmod 775 "${scriptFile}"

@@ -76,7 +76,7 @@ create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
 
 # Get CRCs
 bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
-cmd="parallel ::: "; for s in ${scriptsdir}/H3K27ac_DND41*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
+cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
 
 # 2.2) For Tcell and T-ALL cells celline data for mouse
 species="mm10"

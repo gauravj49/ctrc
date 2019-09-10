@@ -53,6 +53,8 @@ mv *SRR1143216* H3K27ac_DND41_GSM1314136_hs_chipseq_R4.fastq.gz
 mv *SRR3098557* H3K27ac_Loucy_GSM2037788_hs_chipseq_R1.fastq.gz
 mv *SRR3098559* H3K27ac_MOLT4_GSM2037790_hs_chipseq_R1.fastq.gz
 mv *SRR1522114* H3K27ac_RPMI8402_GSM1442003_hs_chipseq_R1.fastq.gz
+mv *SRR568221*  H3K27ac_DND41_Broad_GSM1003462_hs_chipseq_R1.fastq.gz
+mv *SRR568222*  H3K27ac_DND41_Broad_GSM1003462_hs_chipseq_R2.fastq.gz
 cd -
 
 # MCL ChIPseq PairEnd data
