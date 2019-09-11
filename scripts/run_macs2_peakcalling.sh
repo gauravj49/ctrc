@@ -30,7 +30,7 @@ do
  echo "" >> "${scriptFile}"
 
  # Run peakcalling
- echo "macs2 callpeak -t ${f} -f BAM -p 1e-5 --broad --keep-dup=auto -n ${bname} --outdir ${sampleDir}  2>&1 | tee ${peakcallingLogFile}" >> "${scriptFile}"
+ echo "macs2 callpeak -t ${f} -f BAM -p 1e-5 --keep-dup=auto -n ${bname} --outdir ${sampleDir}  2>&1 | tee ${peakcallingLogFile}" >> "${scriptFile}"
 
  # Write the command in the script file and give it correct permission to run
  chmod 775 "${scriptFile}"

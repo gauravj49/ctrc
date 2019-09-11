@@ -14,8 +14,6 @@ crcLogsDir="${outdir}/logs/CRCLogs"
 mkdir -p ${scriptsdir} ${outdir} ${crcLogsDir}
 
 # Get the list of bam files to get the sample names 
-
-
 for f in $(find ${outdir} -maxdepth 2 -name *.bam);
 do
  # Get basefile name

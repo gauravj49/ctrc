@@ -27,6 +27,15 @@ create_sample_dirs(){
  done
 }
 
+# 2.0) Remove duplicates from the Tcell and T-ALL cells celline data for humans
+oldbamdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tcellTallcellLine_hg"
+# allBams=$(find ${oldbamdir} -name *.bam)
+# parallel 'bamfile={}; \
+# rmdupbam=$(dirname ${bamfile})/$(basename ${bamdile} .bam)_rmdup.bam
+# samtools rmdup  -s ${bamfile} ${rmdupbam}' ::: ${allBams}
+ls ${oldbamdir}/*.bam | parallel --progress --eta -j 16 'samtools rmdup {} {.}_rmdup.bam'
+ls ${oldbamdir}/*rmdup.bam | parallel --progress --eta -j 16 'samtools index -@ 32 {}'
+
 # 2.1) For Tcell and T-ALL cells celline data for humans
 species="hg19"
 projName="tcellTallcellLine_hg"
@@ -67,12 +76,10 @@ cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo 
 species="hg19"
 projName="tcellTallcellLine_hg"
 outdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tcellTallcellLine_hg"
-bamdir="output/chip/tcellTallcellLine_hg/mapping"
-peaksdir="output/chip/tcellTallcellLine_hg/peaks"
 scriptsdir="scripts/03_crcs/${projName}"
 
-# Create folders for each file and move them to the relevant folders
-create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
+# # Create folders for each file and move them to the relevant folders
+# create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
 
 # Get CRCs
 bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
@@ -107,3 +114,5 @@ create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
 # Get CRCs
 bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
 cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
+
+# rsync --exclude *.bam --exclude *.bai --exclude *.sam -arvPR output/chip/tcellTallcellLine_hg output/chip/tcellTallcellLine_hg_CRCs_Anja_macs_10e5
