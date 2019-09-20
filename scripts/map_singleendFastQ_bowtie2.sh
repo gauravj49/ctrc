@@ -29,6 +29,8 @@ do
 
  # Create the script file
  touch "${scriptFile}"
+ echo "#!/bin/bash" > "${scriptFile}"
+ echo "" >> "${scriptFile}"
 
  # Align reads
  # 1.1) Map H3k27Ac chip data with bowtie2
