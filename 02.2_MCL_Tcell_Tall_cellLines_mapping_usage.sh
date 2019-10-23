@@ -59,3 +59,19 @@ projName="mcl"
 fastqdir="/media/rad/HDD1/PUB_CRCs/chip/mcl"
 outputDir="output/chip/mcl/mapping"
 run_pe_mapping_qc ${fastqdir} ${outputDir} ${species} ${projName}
+
+# 2.4) AML
+cd /media/nas/raw/PUB_CRCs; ls download_8_AML | parallel --progress --eta -j 32 'rsync -arvRP download_8_AML/{} /media/rad/HDD1/PUB_CRCs/chip'; cd -
+species="hg19"
+projName="AML"
+fastqdir="/media/rad/HDD1/PUB_CRCs/chip/AML"
+outputDir="/media/rad/HDD1/ctrcs/output/AML/mapping"
+run_se_mapping_qc ${fastqdir} ${outputDir} ${species} ${projName}
+
+# 2.5) diaferia
+cd /media/nas/raw/PUB_CRCs; ls download_7_diaferia | parallel --progress --eta -j 32 'rsync -arvRP download_7_diaferia/{} /media/rad/HDD1/PUB_CRCs/chip'; cd -
+species="hg19"
+projName="diaferia"
+fastqdir="/media/rad/HDD1/PUB_CRCs/chip/diaferia"
+outputDir="/media/rad/HDD1/ctrcs/output/diaferia/mapping"
+run_se_mapping_qc ${fastqdir} ${outputDir} ${species} ${projName}
