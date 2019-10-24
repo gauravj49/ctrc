@@ -4,20 +4,29 @@
 
 # Set user defined environment variables
 jobdir="/home/rad/users/gaurav/projects/ctrc"
-outdir=$1
-projName=$2
+projdir=$1    # "/media/rad/HDD1/ctrcs/output/AML"
+projName=$2   # AML
 scriptsdir="${jobdir}/scripts/02_peakcalling/${projName}"
-peakcallingLogsDir="${outdir}/logs/peakcallingLogs"
+peakcallingLogsDir="${projdir}/logs/peakcallingLogs"
 
+ # # Input folder structure
+ # ├── Project_name
+ # │   └── SampleNames
+ # │       ├── sample_rmdup.bam
+ # │       └── sample_rmdup.bam.bai
+ # └── logs
+ #     └── mappingLogs
+ #         ├── sample_bowtie2_mapping.log
+ #         └── ...
 
 # Create required dirs
-mkdir -p ${scriptsdir} ${outdir} ${peakcallingLogsDir}
+mkdir -p ${scriptsdir} ${projdir} ${peakcallingLogsDir}
 
-for f in $(find ${outdir} -maxdepth 2 -name *.bam);
+for f in $(find ${projdir} -maxdepth 3 -name *rmdup.bam);
 do
  # Get basefile name
  bname=$(basename ${f} .bam)
- sampleDir="${outdir}/${bname}";
+ sampleDir="${projdir}/${bname}/peaks";
  scriptFile="${scriptsdir}/${bname}.sh"
  peakcallingLogFile=${peakcallingLogsDir}/${bname}_macs2_peakcalling.log
 
