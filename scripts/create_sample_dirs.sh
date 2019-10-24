@@ -31,6 +31,6 @@ do
  mv ${b}* ${sampleDir}
 
  # Move the respecitive logs dir to project log dir
- logsDir="$(dirname ${outdir})/logs"; mkdir -p ${logsDir}
+ logsDir="${outdir}/logs"; mkdir -p ${logsDir}
  mv "${mappingDir}/mappingLogs" ${logsDir}
 done

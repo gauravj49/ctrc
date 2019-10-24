@@ -52,8 +52,8 @@ projName="AML"
 oldmappingDir="/media/rad/HDD1/ctrcs/output/AML/mapping"
 projdir="/media/rad/HDD1/ctrcs/output/AML"
 scriptsdir="scripts/02_peakcalling/${projName}"
-# # Get the separate sample dir if the bam files are in one mapping dir
-# create_sample_dirs ${oldmappingDir}
+# Get the separate sample dir if the bam files are in one mapping dir
+bash scripts/create_sample_dirs.sh ${oldmappingDir}
 # rm -rf ${projdir}/mapping
 # Perform parallel peakcalling
 bash scripts/run_macs2_peakcalling.sh ${projdir} ${projName}
@@ -66,7 +66,7 @@ oldmappingDir="/media/rad/HDD1/ctrcs/output/diaferia/mapping"
 projdir="/media/rad/HDD1/ctrcs/output/diaferia"
 scriptsdir="scripts/02_peakcalling/${projName}"
 # Get the separate sample dir if the bam files are in one mapping dir
-bash scripts/create_sample_dirs ${oldmappingDir}
+bash scripts/create_sample_dirs.sh ${oldmappingDir}
 # rm -rf ${projdir}/mapping
 # Perform parallel peakcalling
 bash scripts/run_macs2_peakcalling.sh ${projdir} ${projName}
@@ -118,3 +118,21 @@ bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
 cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
 
 # rsync --exclude *.bam --exclude *.bai --exclude *.sam -arvPR output/chip/tcellTallcellLine_hg output/chip/tcellTallcellLine_hg_CRCs_Anja_macs_10e5
+
+# 2.4) AML
+species="hg19"
+projName="AML"
+projdir="/media/rad/HDD1/ctrcs/output/${projName}"
+scriptsdir="scripts/03_crcs/${projName}"
+# Get CRCs
+bash scripts/get_crcs.sh ${projdir} ${projName} ${species}
+cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
+
+# 2.5) Diaferia
+species="hg19"
+projName="diaferia"
+projdir="/media/rad/HDD1/ctrcs/output/${projName}"
+scriptsdir="scripts/03_crcs/${projName}"
+# Get CRCs
+bash scripts/get_crcs.sh ${projdir} ${projName} ${species}
+cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}

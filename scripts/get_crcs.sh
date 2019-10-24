@@ -14,7 +14,7 @@ crcLogsDir="${outdir}/logs/CRCLogs"
 mkdir -p ${scriptsdir} ${outdir} ${crcLogsDir}
 
 # Get the list of bam files to get the sample names 
-for f in $(find ${outdir} -maxdepth 2 -name *.bam);
+for f in $(find ${outdir} -maxdepth 3 -name *rmdup.bam);
 do
  # Get basefile name
  bname=$(basename ${f} .bam)
@@ -22,8 +22,8 @@ do
  scriptFile="${scriptsdir}/${bname}.sh"
  crcdir="${sampleDir}/crcs"; rm -rf ${crcdir}; mkdir -p ${crcdir}
  crcLogFile="${crcLogsDir}/${bname}_crcs.log"
- summitsBed="${sampleDir}/${bname}_summits.bed"
- bamFile="${sampleDir}/${bname}.bam"
+ summitsBed="${sampleDir}/peaks/${bname}_summits.bed"
+ bamFile="${sampleDir}/mapping/${bname}.bam"
  encTableFile="${crcdir}/${bname}_summits_AllEnhancers.table.txt"
 
  # Get the jobname to submit for each job
