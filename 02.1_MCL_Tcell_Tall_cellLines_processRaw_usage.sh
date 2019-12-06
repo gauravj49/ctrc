@@ -145,54 +145,54 @@ cd -
 
 # ATACseq Murine Tcells data
 cd /media/nas/raw/PUB_CRCs/download_5/atacPE
-mv SRR3152810_1.fastq.gz.1  BMHSC1_GSM2056296_mm_atacseq_R1_1.fastq.gz
-mv SRR3152810_2.fastq.gz.1  BMHSC1_GSM2056296_mm_atacseq_R1_2.fastq.gz
-mv SRR3152811_1.fastq.gz.1  BMHSC2_GSM2056297_mm_atacseq_R1_1.fastq.gz
-mv SRR3152811_2.fastq.gz.1  BMHSC2_GSM2056297_mm_atacseq_R1_2.fastq.gz
-mv SRR3152818_1.fastq.gz.1  BMMPP1_GSM2056304_mm_atacseq_R1_1.fastq.gz
-mv SRR3152818_2.fastq.gz.1  BMMPP1_GSM2056304_mm_atacseq_R1_2.fastq.gz
-mv SRR3152819_1.fastq.gz.1  BMMPP2_GSM2056305_mm_atacseq_R1_1.fastq.gz
-mv SRR3152819_2.fastq.gz.1  BMMPP2_GSM2056305_mm_atacseq_R1_2.fastq.gz
-mv SRR3152808_1.fastq.gz.1  BMCLP1_GSM2056294_mm_atacseq_R1_1.fastq.gz
-mv SRR3152808_2.fastq.gz.1  BMCLP1_GSM2056294_mm_atacseq_R1_2.fastq.gz
-mv SRR3152809_1.fastq.gz.1  BMCLP2_GSM2056295_mm_atacseq_R1_1.fastq.gz
-mv SRR3152809_2.fastq.gz.1  BMCLP2_GSM2056295_mm_atacseq_R1_2.fastq.gz
-mv SRR3152806_1.fastq.gz.1  BMB1_GSM2056292_mm_atacseq_R1_1.fastq.gz
-mv SRR3152806_2.fastq.gz.1  BMB1_GSM2056292_mm_atacseq_R1_2.fastq.gz
-mv SRR3152807_1.fastq.gz.1  BMB2_GSM2056293_mm_atacseq_R1_1.fastq.gz
-mv SRR3152807_2.fastq.gz.1  BMB2_GSM2056293_mm_atacseq_R1_2.fastq.gz
-mv SRR3152822_1.fastq.gz.1  BMNK1_GSM2056308_mm_atacseq_R1_1.fastq.gz
-mv SRR3152822_2.fastq.gz.1  BMNK1_GSM2056308_mm_atacseq_R1_2.fastq.gz
-mv SRR3152823_1.fastq.gz.1  BMNK2_GSM2056309_mm_atacseq_R1_1.fastq.gz
-mv SRR3152823_2.fastq.gz.1  BMNK2_GSM2056309_mm_atacseq_R1_2.fastq.gz
-mv SRR3152846_1.fastq.gz.1  SPCD41_GSM2056332_mm_atacseq_R1_1.fastq.gz
-mv SRR3152846_2.fastq.gz.1  SPCD41_GSM2056332_mm_atacseq_R1_2.fastq.gz
-mv SRR3152847_1.fastq.gz.1  SPCD42_GSM2056333_mm_atacseq_R1_1.fastq.gz
-mv SRR3152847_2.fastq.gz.1  SPCD42_GSM2056333_mm_atacseq_R1_2.fastq.gz
-mv SRR3152820_1.fastq.gz.1  SPCD81_GSM2056306_mm_atacseq_R1_1.fastq.gz
-mv SRR3152820_2.fastq.gz.1  SPCD81_GSM2056306_mm_atacseq_R1_2.fastq.gz
-mv SRR3152821_1.fastq.gz.1  SPCD82_GSM2056307_mm_atacseq_R1_1.fastq.gz
-mv SRR3152821_2.fastq.gz.1  SPCD82_GSM2056307_mm_atacseq_R1_2.fastq.gz
-mv SRR5799383_1.fastq.gz.1  ETPT1_GSM2692171_mm_atacseq_R1_1.fastq.gz
-mv SRR5799383_2.fastq.gz.1  ETPT1_GSM2692171_mm_atacseq_R1_2.fastq.gz
-mv SRR5799384_1.fastq.gz.1  ETPT2_GSM2692172_mm_atacseq_R1_1.fastq.gz
-mv SRR5799384_2.fastq.gz.1  ETPT2_GSM2692172_mm_atacseq_R1_2.fastq.gz
-mv SRR5799385_1.fastq.gz.1  DN2aT1_GSM2692173_mm_atacseq_R1_1.fastq.gz
-mv SRR5799385_2.fastq.gz.1  DN2aT1_GSM2692173_mm_atacseq_R1_2.fastq.gz
-mv SRR5799386_1.fastq.gz.1  DN2aT2_GSM2692174_mm_atacseq_R1_1.fastq.gz
-mv SRR5799386_2.fastq.gz.1  DN2aT2_GSM2692174_mm_atacseq_R1_2.fastq.gz
-mv SRR5799387_1.fastq.gz.1  DN2bT1_GSM2692175_mm_atacseq_R1_1.fastq.gz
-mv SRR5799387_2.fastq.gz.1  DN2bT1_GSM2692175_mm_atacseq_R1_2.fastq.gz
-mv SRR5799388_1.fastq.gz.1  DN2bT2_GSM2692176_mm_atacseq_R1_1.fastq.gz
-mv SRR5799388_2.fastq.gz.1  DN2bT2_GSM2692176_mm_atacseq_R1_2.fastq.gz
-mv SRR5799389_1.fastq.gz.1  DN3T1_GSM2692177_mm_atacseq_R1_1.fastq.gz
-mv SRR5799389_2.fastq.gz.1  DN3T1_GSM2692177_mm_atacseq_R1_2.fastq.gz
-mv SRR5799545_1.fastq.gz.1  DN3T2_GSM2692333_mm_atacseq_R1_1.fastq.gz
-mv SRR5799545_2.fastq.gz.1  DN3T2_GSM2692333_mm_atacseq_R1_2.fastq.gz
-mv SRR5799390_1.fastq.gz.1  DN4T1_GSM2692178_mm_atacseq_R1_1.fastq.gz
-mv SRR5799390_2.fastq.gz.1  DN4T1_GSM2692178_mm_atacseq_R1_2.fastq.gz
-mv SRR5799391_1.fastq.gz.1  DN4T2_GSM2692179_mm_atacseq_R1_1.fastq.gz
-mv SRR5799391_2.fastq.gz.1  DN4T2_GSM2692179_mm_atacseq_R1_2.fastq.gz
+mv SRR3152810_1.fastq.gz.1  BMHSC1_GSM2056296_mm_atacseq_R1_1.fastq.gz
+mv SRR3152810_2.fastq.gz.1  BMHSC1_GSM2056296_mm_atacseq_R1_2.fastq.gz
+mv SRR3152811_1.fastq.gz.1  BMHSC2_GSM2056297_mm_atacseq_R1_1.fastq.gz
+mv SRR3152811_2.fastq.gz.1  BMHSC2_GSM2056297_mm_atacseq_R1_2.fastq.gz
+mv SRR3152818_1.fastq.gz.1  BMMPP1_GSM2056304_mm_atacseq_R1_1.fastq.gz
+mv SRR3152818_2.fastq.gz.1  BMMPP1_GSM2056304_mm_atacseq_R1_2.fastq.gz
+mv SRR3152819_1.fastq.gz.1  BMMPP2_GSM2056305_mm_atacseq_R1_1.fastq.gz
+mv SRR3152819_2.fastq.gz.1  BMMPP2_GSM2056305_mm_atacseq_R1_2.fastq.gz
+mv SRR3152808_1.fastq.gz.1  BMCLP1_GSM2056294_mm_atacseq_R1_1.fastq.gz
+mv SRR3152808_2.fastq.gz.1  BMCLP1_GSM2056294_mm_atacseq_R1_2.fastq.gz
+mv SRR3152809_1.fastq.gz.1  BMCLP2_GSM2056295_mm_atacseq_R1_1.fastq.gz
+mv SRR3152809_2.fastq.gz.1  BMCLP2_GSM2056295_mm_atacseq_R1_2.fastq.gz
+mv SRR3152806_1.fastq.gz.1  BMB1_GSM2056292_mm_atacseq_R1_1.fastq.gz
+mv SRR3152806_2.fastq.gz.1  BMB1_GSM2056292_mm_atacseq_R1_2.fastq.gz
+mv SRR3152807_1.fastq.gz.1  BMB2_GSM2056293_mm_atacseq_R1_1.fastq.gz
+mv SRR3152807_2.fastq.gz.1  BMB2_GSM2056293_mm_atacseq_R1_2.fastq.gz
+mv SRR3152822_1.fastq.gz.1  BMNK1_GSM2056308_mm_atacseq_R1_1.fastq.gz
+mv SRR3152822_2.fastq.gz.1  BMNK1_GSM2056308_mm_atacseq_R1_2.fastq.gz
+mv SRR3152823_1.fastq.gz.1  BMNK2_GSM2056309_mm_atacseq_R1_1.fastq.gz
+mv SRR3152823_2.fastq.gz.1  BMNK2_GSM2056309_mm_atacseq_R1_2.fastq.gz
+mv SRR3152846_1.fastq.gz.1  SPCD41_GSM2056332_mm_atacseq_R1_1.fastq.gz
+mv SRR3152846_2.fastq.gz.1  SPCD41_GSM2056332_mm_atacseq_R1_2.fastq.gz
+mv SRR3152847_1.fastq.gz.1  SPCD42_GSM2056333_mm_atacseq_R1_1.fastq.gz
+mv SRR3152847_2.fastq.gz.1  SPCD42_GSM2056333_mm_atacseq_R1_2.fastq.gz
+mv SRR3152820_1.fastq.gz.1  SPCD81_GSM2056306_mm_atacseq_R1_1.fastq.gz
+mv SRR3152820_2.fastq.gz.1  SPCD81_GSM2056306_mm_atacseq_R1_2.fastq.gz
+mv SRR3152821_1.fastq.gz.1  SPCD82_GSM2056307_mm_atacseq_R1_1.fastq.gz
+mv SRR3152821_2.fastq.gz.1  SPCD82_GSM2056307_mm_atacseq_R1_2.fastq.gz
+mv SRR5799383_1.fastq.gz.1  ETPT1_GSM2692171_mm_atacseq_R1_1.fastq.gz
+mv SRR5799383_2.fastq.gz.1  ETPT1_GSM2692171_mm_atacseq_R1_2.fastq.gz
+mv SRR5799384_1.fastq.gz.1  ETPT2_GSM2692172_mm_atacseq_R1_1.fastq.gz
+mv SRR5799384_2.fastq.gz.1  ETPT2_GSM2692172_mm_atacseq_R1_2.fastq.gz
+mv SRR5799385_1.fastq.gz.1  DN2aT1_GSM2692173_mm_atacseq_R1_1.fastq.gz
+mv SRR5799385_2.fastq.gz.1  DN2aT1_GSM2692173_mm_atacseq_R1_2.fastq.gz
+mv SRR5799386_1.fastq.gz.1  DN2aT2_GSM2692174_mm_atacseq_R1_1.fastq.gz
+mv SRR5799386_2.fastq.gz.1  DN2aT2_GSM2692174_mm_atacseq_R1_2.fastq.gz
+mv SRR5799387_1.fastq.gz.1  DN2bT1_GSM2692175_mm_atacseq_R1_1.fastq.gz
+mv SRR5799387_2.fastq.gz.1  DN2bT1_GSM2692175_mm_atacseq_R1_2.fastq.gz
+mv SRR5799388_1.fastq.gz.1  DN2bT2_GSM2692176_mm_atacseq_R1_1.fastq.gz
+mv SRR5799388_2.fastq.gz.1  DN2bT2_GSM2692176_mm_atacseq_R1_2.fastq.gz
+mv SRR5799389_1.fastq.gz.1  DN3T1_GSM2692177_mm_atacseq_R1_1.fastq.gz
+mv SRR5799389_2.fastq.gz.1  DN3T1_GSM2692177_mm_atacseq_R1_2.fastq.gz
+mv SRR5799545_1.fastq.gz.1  DN3T2_GSM2692333_mm_atacseq_R1_1.fastq.gz
+mv SRR5799545_2.fastq.gz.1  DN3T2_GSM2692333_mm_atacseq_R1_2.fastq.gz
+mv SRR5799390_1.fastq.gz.1  DN4T1_GSM2692178_mm_atacseq_R1_1.fastq.gz
+mv SRR5799390_2.fastq.gz.1  DN4T1_GSM2692178_mm_atacseq_R1_2.fastq.gz
+mv SRR5799391_1.fastq.gz.1  DN4T2_GSM2692179_mm_atacseq_R1_1.fastq.gz
+mv SRR5799391_2.fastq.gz.1  DN4T2_GSM2692179_mm_atacseq_R1_2.fastq.gz
 
 cd -
 
@@ -202,15 +202,17 @@ zcat SRR1143213.fastq.gz SRR1143214.fastq.gz SRR1143215.fastq.gz SRR1143216.fast
 zcat {SRR1143217,SRR1143218,SRR1143219,SRR1143220}.fastq.gz > H3K27me3_DND41_GSM1314137_hs_chipseq_R1.fastq
 zcat {SRR1143221,SRR1143222,SRR1143223,SRR1143224}.fastq.gz > H3K36me3_DND41_GSM1314138_hs_chipseq_R1.fastq
 zcat {SRR1143225,SRR1143226,SRR1143227,SRR1143228}.fastq.gz > H3K4me1_DND41_GSM1314139_hs_chipseq_R1.fastq
-zcat {SRR1143229,SRR1143230,SRR1143231,SRR1143232}.fastq.gz > H3K27me3_DND41_GSM1314140_hs_chipseq_R1.fastq
+zcat {SRR1143229,SRR1143230,SRR1143231,SRR1143232}.fastq.gz > H3K4me3_DND41_GSM1314140_hs_chipseq_R1.fastq
 mv SRR1057274.fastq.gz H3K27ac_Jurkat_GSM1296384_hs_chipseq_R1.fastq.gz
 zcat {SRR1791404,SRR1791405,SRR1791406,SRR1791407,SRR1791408,SRR1791409}.fastq.gz > H3K36me3_Jurkat_GSM1603209_hs_chipseq_R1.fastq
 mv SRR4031389.fastq.gz H3K4me2_Jurkat_GSM2279063_hs_chipseq_R1.fastq.gz
 mv SRR4031399.fastq.gz H3K27me3_Jurkat_GSM2279071_hs_chipseq_R1.fastq.gz
 mv SRR6987883.fastq.gz CTCF_Jurkat_GSM3094396_hs_chipseq_R1.fastq.gz
-mv SRR7782877_1.fastq.gz H3K4me1_Jurkat_GSM3374691_hs_chipseq_R1_1.fastq.gz
-mv SRR7782877_2.fastq.gz H3K4me1_Jurkat_GSM3374691_hs_chipseq_R1_2.fastq.gz
+mv SRR7782877_1.fastq.gz H3K4me1_Jurkat_GSM3374691_hs_chipseq_R1_001.fastq.gz
+mv SRR7782877_2.fastq.gz H3K4me1_Jurkat_GSM3374691_hs_chipseq_R2_001.fastq.gz
 mv SRR061743.fastq.gz H3K4me3_Jurkat_GSM569085_hs_chipseq_R1.fastq.gz
 mv SRR647929.fastq.gz H3K27me3_Jurkat_GSM1062740_hs_chipseq_R1.fastq.gz
 
+ls *.fastq    | parallel --progress --eta -j 24 'gzip {} '
 cd -
+
