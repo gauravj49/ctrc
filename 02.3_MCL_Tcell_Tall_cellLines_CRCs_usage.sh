@@ -17,23 +17,26 @@ species="hg19"
 projName="tcellTallcellLine_hg"
 oldbamdir="output/chip/tcellTallcellLine_hg/mapping"
 oldpeaksdir="output/chip/tcellTallcellLine_hg/peaks"
-outdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tcellTallcellLine_hg"
+projdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tcellTallcellLine_hg"
 scriptsdir="scripts/02_peakcalling/${projName}"
-
 # # Get the separate sample dir if the bam files are in one mapping dir
-# create_sample_dirs ${oldbamdir} ${oldpeaksdir}
+# bash scripts/create_sample_dirs.sh ${oldmappingDir}
+# rm -rf ${projdir}/mapping
 # Perform parallel peakcalling
-bash scripts/run_macs2_peakcalling.sh ${outdir} ${projName}
+bash scripts/run_macs2_peakcalling.sh ${projdir} ${projName}
 cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
 
 # 2.2) For Tcell and T-ALL cells celline data for mouse
 species="mm10"
-projName="tcellTallcellLine_mm"
-bamdir="output/chip/tcellTallcellLine_mm/mapping"
-peaksdir="output/chip/tcellTallcellLine_mm/peaks"
+projName="tALLcellLine_mm"
+oldmappingDir="/home/rad/users/gaurav/projects/ctrc/output/chip/tALLcellLine_mm/mapping"
+projdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tALLcellLine_mm"
 scriptsdir="scripts/02_peakcalling/${projName}"
+# Get the separate sample dir if the bam files are in one mapping dir
+bash scripts/create_sample_dirs.sh ${oldmappingDir}
+# rm -rf ${projdir}/mapping
 # Perform parallel peakcalling
-bash scripts/run_macs2_peakcalling.sh ${bamdir} ${peaksdir} ${projName}
+bash scripts/run_macs2_peakcalling.sh ${projdir} ${projName}
 cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
 
 # 2.3) For MCL celline data
@@ -89,18 +92,18 @@ cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo 
 
 # 2.2) For Tcell and T-ALL cells celline data for mouse
 species="mm10"
-projName="tcellTallcellLine_mm"
-outdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tcellTallcellLine_mm"
-bamdir="output/chip/tcellTallcellLine_mm/mapping"
-peaksdir="output/chip/tcellTallcellLine_mm/peaks"
+projName="tALLcellLine_mm"
+projdir="/home/rad/users/gaurav/projects/ctrc/output/chip/tALLcellLine_mm"
 scriptsdir="scripts/03_crcs/${projName}"
-
-# Create folders for each file and move them to the relevant folders
-create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
-
 # Get CRCs
-bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
+bash scripts/get_crcs.sh ${projdir} ${projName} ${species}
 cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
+
+
+
+
+
+
 
 # 2.3) For MCL celline data
 species="hg19"
@@ -116,8 +119,6 @@ create_sample_dirs ${bamdir} ${peaksdir} ${outdir}
 # Get CRCs
 bash scripts/get_crcs.sh ${outdir} ${projName} ${species}
 cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
-
-# rsync --exclude *.bam --exclude *.bai --exclude *.sam -arvPR output/chip/tcellTallcellLine_hg output/chip/tcellTallcellLine_hg_CRCs_Anja_macs_10e5
 
 # 2.4) AML
 species="hg19"
@@ -136,3 +137,10 @@ scriptsdir="scripts/03_crcs/${projName}"
 # Get CRCs
 bash scripts/get_crcs.sh ${projdir} ${projName} ${species}
 cmd="parallel ::: "; for s in ${scriptsdir}/*.sh; do chmod 775 ${s}; cmd=$(echo "${cmd} ${s}"); done; eval ${cmd}
+
+
+
+# COPY
+# rsync --exclude *.bam --exclude *.bai --exclude *.sam -arvPR output/chip/tcellTallcellLine_hg output/chip/tcellTallcellLine_hg_CRCs_Anja_macs_10e5
+# or
+# sync -arvRP H3K27ac_*/crcs*.{ntx,txt,meme,pdf,bed,fa,gff} toSend/
