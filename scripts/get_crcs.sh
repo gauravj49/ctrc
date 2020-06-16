@@ -21,8 +21,8 @@ do
  scriptFile="${scriptsdir}/${bname}_crcs.sh"
  crcLogFile="${crcLogsDir}/${bname}_crcs.log"
  summitsBed="${sampleDir}/${bname}_summits.bed"
- bamFile="${sampleDir}/${bname}.mLb.clN.sorted.bam"
- encTableFile="${sampleDir}/${bname}_summits_AllEnhancers.table.txt"
+ bamFile="${sampleDir}/${bname}.bam"
+ encTableFile="${sampleDir}/rose2/${bname}_summits_AllEnhancers.table.txt"
 
  # Create the script file
  touch "${scriptFile}"
@@ -35,14 +35,14 @@ do
  echo "cd ${jobdir}/scripts/pipeline" >> "${scriptFile}"
 
  # 3.1) Call SuperEnhancers using ROSE2
- echo "python2.7 ROSE2_main.py -g ${species} -t 1000 -s 12500 -i ${summitsBed} -r ${bamFile} -o ${sampleDir} 2>&1 | tee ${crcLogFile}" >> "${scriptFile}"
+ echo "python2.7 ROSE2_main.py -g ${species} -t 1000 -s 12500 -i ${summitsBed} -r ${bamFile} -o ${sampleDir}/rose2 2>&1 | tee ${crcLogFile}" >> "${scriptFile}"
  echo "" >> "${scriptFile}"
 
  # 3.2) Get the Core Regulatory Circuits (CRCs) using crc2
  # Check if FIMO is installed from the meme suite
  # Needs sudo python2.7 -m pip install networkx==1.9.1
  echo "cd ${jobdir}/scripts/CLL_TFnetworks_2018" >> "${scriptFile}"
- echo "python2.7 CRC2.py -e ${encTableFile} -b ${bamFile} -g ${species} -o ${sampleDir} -n ${bname} 2>&1 | tee -a ${crcLogFile}" >> "${scriptFile}"
+ echo "python2.7 CRC2.py -e ${encTableFile} -b ${bamFile} -g ${species} -o ${sampleDir}/crcs -n ${bname} 2>&1 | tee -a ${crcLogFile}" >> "${scriptFile}"
  echo "" >> "${scriptFile}"
 
  # Get back to original working dir
