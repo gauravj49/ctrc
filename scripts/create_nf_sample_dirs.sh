@@ -6,7 +6,7 @@
 projName=${1:-"pdacBatch1"}
 outdir=${2:-"/media/rad/HDD1/nfchip/christine/pdacBatch1/analysis/crcs"}
 bamdir=${3:-"/media/rad/HDD1/nfchip/christine/pdacBatch1/results/bwa/mergedLibrary"}
-peaksdir=${4:-"/media/rad/HDD1/nfchip/christine/pdacBatch1/results/bwa/mergedLibrary/macs/narrowPeak"}
+peaksdir=${4:-""}
 
 # Get relevant directories
 projDir="${outdir}/${user}/${projName}"
@@ -19,6 +19,7 @@ echo "projName=${projName}"
 echo "outdir=${outdir}"
 echo "bamdir=${bamdir}"
 echo "projDir=${projDir}"
+echo "peaksdir=${peaksdir}"
 echo ""
 echo "######################################################################"
 echo ""
@@ -33,12 +34,16 @@ do
   # Link the bam and peaks file from the mapping and peaks dir
   ln -s ${b} ${sampleDir}
   ln -s ${b}.bai ${sampleDir}
-  ln -s ${peaksdir}/${bname}_summits.bed ${sampleDir}
+  if [ ! -z ${peaksdir} ]; then
+    ln -s ${peaksdir}/${bname}_summits.bed ${sampleDir}
+  fi
   # Print status
   echo "- Creating links for:"
-  echo -e "\t- ${sampleDir}/bname.mLb.clN.sorted.bam"
-  echo -e "\t- ${sampleDir}/bname.mLb.clN.sorted.bam.bai"
-  echo -e "\t- ${sampleDir}/bname_summits.bed"
+  echo -e "\t- ${sampleDir}/${bname}.mLb.clN.sorted.bam"
+  echo -e "\t- ${sampleDir}/${bname}.mLb.clN.sorted.bam.bai"
+  if [ ! -z ${peaksdir} ]; then
+    echo -e "\t- ${sampleDir}/${bname}_summits.bed"
+  fi
   echo ""
 done
 
