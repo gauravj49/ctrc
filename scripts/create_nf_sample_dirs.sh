@@ -28,21 +28,24 @@ echo ""
 for b in ${bamdir}/*.bam;
 do
   # Get the basename
-  bname=$(basename ${b} .mLb.clN.sorted.bam)
+  bname=$(basename ${b} _R1.mLb.clN.sorted.bam)
   # Create relevant folders
   sampleDir="${outdir}/${bname}"; mkdir -p ${sampleDir}
   # Link the bam and peaks file from the mapping and peaks dir
   ln -s ${b} ${sampleDir}
   ln -s ${b}.bai ${sampleDir}
   if [ ! -z ${peaksdir} ]; then
-    ln -s ${peaksdir}/${bname}_summits.bed ${sampleDir}
+    # ln -s ${peaksdir}/${bname}_summits.bed ${sampleDir}
+    peakFile=$(find ${peaksdir} -name *${bname}*summits.bed)
+    ln -s ${peakFile} ${sampleDir}
   fi
   # Print status
   echo "- Creating links for:"
   echo -e "\t- ${sampleDir}/${bname}.mLb.clN.sorted.bam"
   echo -e "\t- ${sampleDir}/${bname}.mLb.clN.sorted.bam.bai"
   if [ ! -z ${peaksdir} ]; then
-    echo -e "\t- ${sampleDir}/${bname}_summits.bed"
+    peakFile=$(find ${peaksdir} -name *${bname}*summits.bed)
+    echo -e "\t- ${peakFile}"
   fi
   echo ""
 done
