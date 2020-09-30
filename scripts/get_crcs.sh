@@ -7,8 +7,11 @@ jobdir="/home/rad/users/gaurav/projects/ctrc"
 crcdir=$1
 projName=$2
 species=$3
+ifNFpipeline=${4:-""} # if nf is entered then use the NFcore pipeline nomenclature
+
 scriptsdir="${jobdir}/scripts/03_crcs/${projName}"
 crcLogsDir="${crcdir}/CRCLogs"
+
 
 # Create required dirs
 mkdir -p ${scriptsdir} ${crcdir} ${crcLogsDir}
@@ -20,9 +23,14 @@ do
  bname=$(basename ${sampleDir})
  scriptFile="${scriptsdir}/${bname}_crcs.sh"
  crcLogFile="${crcLogsDir}/${bname}_crcs.log"
- summitsBed="${sampleDir}/${bname}_summits.bed"
- bamFile="${sampleDir}/${bname}.bam"
- encTableFile="${sampleDir}/rose2/${bname}_summits_AllEnhancers.table.txt"
+ summitsBed="$(find ${sampleDir} -name ${bname}*summits.bed*)"
+ bamFile="$(find ${sampleDir} -name ${bname}*.bam)"
+ encTableFile="${sampleDir}/rose2/$(basename ${summitsBed} .bed)_AllEnhancers.table.txt"
+#  bamFile="${sampleDir}/${bname}_R1.bam"
+#  if [ ${ifNFpipeline} == 'nf' ]; then
+#   bamFile="${sampleDir}/${bname}_R1.mLb.clN.sorted.bam"
+#  fi
+#  encTableFile="${sampleDir}/rose2/${bname}_summits_AllEnhancers.table.txt"
 
  # Create the script file
  touch "${scriptFile}"
